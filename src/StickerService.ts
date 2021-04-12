@@ -43,7 +43,7 @@ function buildWallpaperCss({
   .ref-tree, /* find usages */
   .head, /* find usages */
   .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions,  
-  .editor-container, /* welcome screen */
+  .welcomePageFocusElement, /* welcome screen */
   .terminal-outer-container /* Terminal outer edge */
   {
     background-image: url('${wallpaperURL}') !important;
@@ -63,6 +63,21 @@ function buildWallpaperCss({
     backdrop-filter: blur(5px) !important;
     background-color: rgba(44, 51, 51, 0.5) !important;
   }
+
+  /* Settings */ 
+  .settings-header,
+  .settings-editor
+  {
+    backdrop-filter: blur(3px) !important;
+  }
+
+ .setting-item-control > .monaco-select-box,
+ .setting-item-control > .monaco-inputbox,
+ .setting-list-new-row > .monaco-button,
+ {
+   backdrop-filter: blur(3px) !important;
+   background-color: rgba(45, 56, 57, 0.5) !important;
+ }
 
   /* Output panel transparency*/
   .monaco-workbench .part.panel > .content .monaco-editor .monaco-editor-background,
@@ -117,7 +132,7 @@ function buildWallpaperCss({
     background-color: rgba(49, 57, 57, 0.5) !important;
   }
 
-  /* glass explorer/sidebar/panel/minimap*/
+  /* glass explorer/sidebar/panel*/
 
   /* .content */
   /* .composite.title, */
