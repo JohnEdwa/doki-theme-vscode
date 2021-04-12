@@ -28,118 +28,17 @@ function buildWallpaperCss({
 
   [id="workbench.parts.editor"] .split-view-view .editor-container .editor-instance>.monaco-editor  .overflow-guard>.monaco-scrollable-element::before,
   .overflow-guard,
-  /*.tab,*/ 
-  /*.tabs-container,*/
-  /* .split-view-view, */ /* draws the wallpaper over the bckground */
-  /*.monaco-pane-view, */
-  /*.composite.title,*/
-  /*.content,*/
   .monaco-select-box, 
-  /*.pane-header, */
   .minimap-decorations-layer,
   .xterm-cursor-layer,
-  /*.decorationsOverviewRuler,*/
   .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control,
   .ref-tree, /* find usages */
   .head, /* find usages */
   .monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions,  
   .welcomePageFocusElement, /* welcome screen */
-  .terminal-outer-container /* Terminal outer edge */
-  {
-    background-image: url('${wallpaperURL}') !important;
-    background-position: ${backgroundAnchoring} !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-  }
-
-  /* For the Diff Editor */  
-	.lines-content.monaco-editor-background {
-		 background-color: transparent !important;
-	}
-
-  /* For the "Show All Commands" etc text on the blank page. */
-  .watermark > .watermark-box {
-    backdrop-filter: blur(5px) !important;
-    background-color: rgba(44, 51, 51, 0.5) !important;
-  }
-
-  /* Settings */ 
-  .settings-header,
-  .settings-editor
-  {
-    backdrop-filter: blur(3px) !important;
-  }
-
- .setting-item-control > .monaco-select-box,
- .setting-item-control > .monaco-inputbox,
- .setting-list-new-row > .monaco-button,
- {
-   backdrop-filter: blur(3px) !important;
-   background-color: rgba(45, 56, 57, 0.5) !important;
- }
-
-  /* Output panel transparency*/
-  .monaco-workbench .part.panel > .content .monaco-editor .monaco-editor-background,
-  div.overflow-guard > div.margin > div.margin-view-overlays, 
-  div.overflow-guard > div.margin
-  {
-    background-color: transparent !important;
-  }
-
-  /* Glass items - common for all */
-  .monaco-list,
-  .monaco-list-rows,
-  .monaco-list-row
-  {
-    background-color: transparent !important;
-  }
-
-  /* Glass notifications */  
-  .notification-toast
-  {
-    backdrop-filter: blur(2px) !important;
-    background-color: rgba(44, 51, 51, 0.5) !important;
-  }
-
-  .notification-list-item-buttons-container > .monaco-text-button {
-    backdrop-filter: blur(2px) !important;
-	  background-color: rgba(50, 55, 55, 0.5) !important;
-  }
-
-  .notifications-toasts,
-  .notification-toast-container,
-  .notifications-list-container,
-  .notification-list-item,
-  .notification-list-item-buttons-container
-  {
-    background-color: transparent !important;
-  }
-	  
-  /* Glass quick task */
-  .quick-input-list
-  {
-    background-color: transparent !important;
-  }
-
-  .quick-input-widget {
-    backdrop-filter: blur(2px) !important;
-    background-color: rgba(44, 51, 51, 0.5) !important;
-  }
-
-  .quick-input-box > .monaco-inputbox {
-    backdrop-filter: blur(2px) !important;
-    background-color: rgba(49, 57, 57, 0.5) !important;
-  }
-
+  .editor-group-container > .editor-container, /* Extension container */
+  .terminal-outer-container, /* Terminal outer edge */
   /* glass explorer/sidebar/panel*/
-
-  /* .content */
-  /* .composite.title, */
-  /* .tabs-container, */
-  /* .tab, */
-  /*.pane-header, */
-    /*.monaco-pane-view, */
   .activitybar,
   .sidebar,
   .panel,
@@ -151,15 +50,77 @@ function buildWallpaperCss({
     background-repeat: no-repeat !important;
     background-size: cover !important;
   }
-    
+
+  /* Output panel*/
+  .monaco-workbench .part.panel > .content .monaco-editor .monaco-editor-background,
+  .overflow-guard > .margin > .margin-view-overlays, 
+  .overflow-guard > .margin,
+  .lines-content.monaco-editor-background, /* source control diff editor */
+  /* Common Glass item transparency */
+  .monaco-list,
+  .monaco-list-rows,
+  .monaco-list-row,
+  /* Glass notifications */
+  .notifications-toasts,
+  .notification-toast-container,
+  .notifications-list-container,
+  .notification-list-item,
+  .notification-list-item-buttons-container,
+  .quick-input-list /* Glass quick task */
+  {
+    background-color: transparent !important;
+  }
+
+
+  /* For the "Show All Commands" etc text on the blank page. */
+  .watermark > .watermark-box 
+  {
+    backdrop-filter: blur(5px) !important;
+    background-color: rgba(44, 51, 51, 0.5) !important;
+  }
+
+  /* Global UI Glass Blur*/ 
+  .settings-header,
+  .settings-editor,
+  .extension-editor,
+  /* glass explorer/sidebar/panel*/
   .activitybar > .content,
   .sidebar > .content,
   .sidebar > .composite.title,
   .tabs-and-actions-container,
-  .tabs-breadcrumbs > .breadcrumbs-control > .monaco-scrollable-element > .monaco-breadcrumbs	{
+  .tabs-breadcrumbs > .breadcrumbs-control > .monaco-scrollable-element > .monaco-breadcrumbs
+  {
     backdrop-filter: blur(3px) !important;
   }
 
+  /* Setting page buttons */
+  .setting-item-control > .monaco-select-box,
+  .setting-item-control > .monaco-inputbox,
+  .setting-list-new-row > .monaco-button
+  {
+    backdrop-filter: blur(3px) !important;
+    background-color: rgba(45, 56, 57, 0.5) !important;
+  }
+
+  /* Glass notifications */  
+  .notification-toast {
+    backdrop-filter: blur(2px) !important;
+    background-color: #53b0b45A !important;
+  }
+
+  .notification-list-item-buttons-container > .monaco-text-button,
+  .quick-input-box > .monaco-inputbox	{
+    backdrop-filter: blur(2px) !important;
+    background-color: rgba(50, 55, 55, 0.5) !important;
+  }
+
+  /* Glass quick task */
+  .quick-input-widget {
+    backdrop-filter: blur(2px) !important;
+    background-color: #53b0b45A !important;
+  }
+
+  /* glass explorer/sidebar/panel*/
   .pane > .pane-header {
     backdrop-filter: blur(3px) !important;
     background-color: rgba(41, 48, 48, 0.5) !important;
@@ -168,6 +129,7 @@ function buildWallpaperCss({
   .tabs-container > .tab	 {		
     background-color: rgba(47, 54, 53, 0.5) !important;
   }
+
 
 
   .monaco-breadcrumbs {
