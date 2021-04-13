@@ -51,6 +51,18 @@ function buildWallpaperCss({
     background-size: cover !important;
   }
 
+/* Theme JSON changes
+  "sideBar.background": "#2f3635",
+  "tab.inactiveBackground": "#2f363580",
+  "tab.activeBackground": "#363d3c80",
+  "activityBar.background": "#29303080",	
+  "sideBarSectionHeader.background": "#29303080",
+  "input.background": "#31393980",
+  "button.background": "#32373780",
+  "quickInput.background": "#2c333380",
+  "notifications.background": "#2c333380"
+*/
+
   /* Output panel*/
   .monaco-workbench .part.panel > .content .monaco-editor .monaco-editor-background,
   .overflow-guard > .margin > .margin-view-overlays, 
@@ -71,66 +83,33 @@ function buildWallpaperCss({
     background-color: transparent !important;
   }
 
-
-  /* For the "Show All Commands" etc text on the blank page. */
-  .watermark > .watermark-box 
-  {
-    backdrop-filter: blur(5px) !important;
-    background-color: rgba(44, 51, 51, 0.5) !important;
-  }
-
   /* Global UI Glass Blur*/ 
   .settings-header,
   .settings-editor,
   .extension-editor,
-  /* glass explorer/sidebar/panel*/
+  /* Glass explorer/sidebar/panel*/
   .activitybar > .content,
   .sidebar > .content,
   .sidebar > .composite.title,
   .tabs-and-actions-container,
-  .tabs-breadcrumbs > .breadcrumbs-control > .monaco-scrollable-element > .monaco-breadcrumbs
-  {
-    backdrop-filter: blur(3px) !important;
-  }
-
-  /* Setting page buttons */
+  .tabs-breadcrumbs > .breadcrumbs-control > .monaco-scrollable-element > .monaco-breadcrumbs,
+  /* Settings page*/
   .setting-item-control > .monaco-select-box,
   .setting-item-control > .monaco-inputbox,
-  .setting-list-new-row > .monaco-button
+  .setting-list-new-row > .monaco-button,
+  /* Notification */
+  .notification-toast,
+  .notification-list-item-buttons-container > .monaco-text-button,
+  /* Quick input */
+  .quick-input-box > .monaco-inputbox,
+  .quick-input-widget,
+  .pane > .pane-header 
   {
     backdrop-filter: blur(3px) !important;
-    background-color: rgba(45, 56, 57, 0.5) !important;
   }
 
-  /* Glass notifications */  
-  .notification-toast {
-    backdrop-filter: blur(2px) !important;
-    background-color: #53b0b45A !important;
-  }
-
-  .notification-list-item-buttons-container > .monaco-text-button,
-  .quick-input-box > .monaco-inputbox	{
-    backdrop-filter: blur(2px) !important;
-    background-color: rgba(50, 55, 55, 0.5) !important;
-  }
-
-  /* Glass quick task */
-  .quick-input-widget {
-    backdrop-filter: blur(2px) !important;
-    background-color: #53b0b45A !important;
-  }
-
-  /* glass explorer/sidebar/panel*/
-  .pane > .pane-header {
-    backdrop-filter: blur(3px) !important;
-    background-color: rgba(41, 48, 48, 0.5) !important;
-  }
-
-  .tabs-container > .tab	 {		
-    background-color: rgba(47, 54, 53, 0.5) !important;
-  }
-
-
+  /* For the "Show All Commands" etc text on the blank page. */
+  .watermark > .watermark-box { backdrop-filter: blur(5px) !important; }
 
   .monaco-breadcrumbs {
     background-color: #00000000 !important;
