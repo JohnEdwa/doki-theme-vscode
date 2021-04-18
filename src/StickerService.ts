@@ -51,16 +51,18 @@ function buildWallpaperCss({
     background-size: cover !important;
   }
 
-/* Theme JSON changes
-  "sideBar.background": "#2f3635",
-  "tab.inactiveBackground": "#2f363580",
-  "tab.activeBackground": "#363d3c80",
-  "activityBar.background": "#29303080",	
-  "sideBarSectionHeader.background": "#29303080",
-  "input.background": "#31393980",
-  "button.background": "#32373780",
-  "quickInput.background": "#2c333380",
-  "notifications.background": "#2c333380"
+  /* Theme JSON changes, using Miku theme as an example - add 0x80 alpha to them all
+	"sideBar.background": "#2f3635",
+	"tab.inactiveBackground": "#2f363580",
+	"tab.activeBackground": "#363d3c80",
+	"activityBar.background": "#29303080",	
+	"sideBarSectionHeader.background": "#29303080",
+	"input.background": "#31393980",
+	"button.background": "#32373780",
+	"quickInput.background": "#2c333380",
+	"notifications.background": "#2c333380",
+	"editorWidget.background:" "#2c333380",
+	"editorHoverWidget.background": "#2c333380"
 */
 
   /* Output panel*/
@@ -98,14 +100,20 @@ function buildWallpaperCss({
   .setting-item-control > .monaco-inputbox,
   .setting-list-new-row > .monaco-button,
   /* Notification */
-  .notification-toast,
   .notification-list-item-buttons-container > .monaco-text-button,
   /* Quick input */
   .quick-input-box > .monaco-inputbox,
-  .quick-input-widget,
   .pane > .pane-header 
+  .monaco-hover-content, /* hover widget */
+  .editor-widget /* find/replace/etc */
   {
-    backdrop-filter: blur(3px) !important;
+    backdrop-filter: blur(5px) !important;
+  }
+
+  .quick-input-widget,
+  .notification-toast
+  {
+    backdrop-filter: blur(2px) !important;
   }
 
   /* For the "Show All Commands" etc text on the blank page. */
